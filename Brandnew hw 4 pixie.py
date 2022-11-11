@@ -1,6 +1,6 @@
+# Student: Elijah James
+# Section: CIS 115
 import random
-
-'''Display board for the pictsie stick game'''
 
 
 def display_board(num_sticks):
@@ -44,7 +44,8 @@ def get_sticks_to_take(player, num_sticks):
     elif sticks_taken < 1:
         print("Come on! Dont break the rules! You must take at least 1 stick!")
         print("Player", player, "how many sticks would you like to take? Select: (1,2 or 3)")
-        sticks_taken = int(input())
+        int(input())
+        get_sticks_to_take(player, num_sticks)
         return sticks_taken
     else:
         return sticks_taken
@@ -62,6 +63,7 @@ def display_summary(player, sticks_taken, sticks_added, sticks_remaining):
 
 
 def main():
+
     num_sticks = 20
     player = 1
     while num_sticks > 0:
@@ -96,5 +98,3 @@ def main():
 
 
 main()
-
-
