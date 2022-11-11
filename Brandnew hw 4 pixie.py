@@ -38,10 +38,15 @@ def get_sticks_to_take(player, num_sticks):
     sticks_taken = int(input())
     if sticks_taken > 3:
         print("Come on! Dont break the rules! You can only take 1,2 or 3 sticks!")
-        get_sticks_to_take(player, num_sticks)
+        print("Player", player, "how many sticks would you like to take? Select: (1,2 or 3)")
+        sticks_taken = int(input())
+        return sticks_taken
     elif sticks_taken < 1:
         print("Come on! Dont break the rules! You must take at least 1 stick!")
+        print("Player", player, "how many sticks would you like to take? Select: (1,2 or 3)")
+        int(input())
         get_sticks_to_take(player, num_sticks)
+        return sticks_taken
     else:
         return sticks_taken
 
@@ -61,32 +66,36 @@ def main():
     num_sticks = 20
     player = 1
     while num_sticks > 0:
+        player = 1
         if num_sticks > 20:
             num_sticks = 20
-        player = 1
-        print("There are now", num_sticks, "sticks left on the board")
-        print("Player 1, how many sticks would you like to take? Select: 1,2 or 3)")
+        print("There are currently", num_sticks, "sticks left on the board")
+        print("Player 1, how many sticks would you like to take? Select: (1,2 or 3)")
         sticks_taken = get_sticks_to_take(player, num_sticks)
         num_sticks -= sticks_taken
         sticks_added = not_quite_right(num_sticks)
         num_sticks += sticks_added
         display_summary(player, sticks_taken, sticks_added, num_sticks)
+        sticks_taken -= num_sticks
+        if num_sticks == 0:
+            print("Player", player, "you lost!! Better luck next time!!")
+            break
         player = 2
-        print("Player 2, how many sticks would you like to take? Select: 1,2 or 3")
+        if num_sticks > 20:
+            num_sticks = 20
+        print("There are now currently", num_sticks, "sticks left on the board")
+        print("Player 2, how many sticks would you like to take? Select: (1,2 or 3)")
         sticks_taken = get_sticks_to_take(player, num_sticks)
         num_sticks -= sticks_taken
         sticks_added = not_quite_right(num_sticks)
         num_sticks += sticks_added
         display_summary(player, sticks_taken, sticks_added, num_sticks)
+        sticks_taken -= num_sticks
         continue
-    if player == 1:
-        player = 2
     else:
         print("Player", player, "you lost!! Better luck next time!!")
 
 
-
 main()
-
 
 
