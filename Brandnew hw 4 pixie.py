@@ -1,6 +1,10 @@
 # Student: Elijah James
 # Section: CIS 115
+
 import random
+
+
+'''Display board for pictsie stick game'''
 
 
 def display_board(num_sticks):
