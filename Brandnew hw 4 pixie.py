@@ -44,8 +44,7 @@ def get_sticks_to_take(player, num_sticks):
     elif sticks_taken < 1:
         print("Come on! Dont break the rules! You must take at least 1 stick!")
         print("Player", player, "how many sticks would you like to take? Select: (1,2 or 3)")
-        int(input())
-        get_sticks_to_take(player, num_sticks)
+        sticks_taken = int(input())
         return sticks_taken
     else:
         return sticks_taken
