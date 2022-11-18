@@ -43,7 +43,7 @@ def get_sticks_to_take(player, num_sticks):
      if sticks_taken <=2:
       return sticks_taken
      if sticks_taken >=3:
-      print("Come on! Dont cheat! You cant take more sticks than what is availiable!")
+      print("Come on! Dont break the rules! You cant take more sticks than what is available!")
       print("Player", player,"how many sticks would you like to take? Select: (1,2 or 3)")
       sticks_taken = int(input())
       return sticks_taken
@@ -51,7 +51,7 @@ def get_sticks_to_take(player, num_sticks):
     if sticks_taken == 1:
       return sticks_taken
     if sticks_taken >= 2:
-      print("Come on! Dont cheat! You cant take more sticks than what is availiable!")
+      print("Come on! Dont break the rules! You cant take more sticks than what is available!")
       print("Player", player,"how many sticks would you like to take? Select: (1,2 or 3)")
     sticks_taken = int(input())
     return sticks_taken 
@@ -121,5 +121,7 @@ def main():
 
 
 main()
+
+ 
 
  
